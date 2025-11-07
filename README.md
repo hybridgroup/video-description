@@ -16,11 +16,11 @@ See https://github.com/hybridgroup/yzma/blob/main/INSTALL.md
 
 ### GoCV
 
-You must also install OpenCV and GoCV, which unlike yzma require CGo.
+You must also install OpenCV and GoCV, which unlike yzma requires CGo.
 
 See https://gocv.io/getting-started/
 
-Although yzma does not use CGo itself, you can also use it in Go applications that use CGo.
+Although yzma does not use CGo, yzma can co-exist in Go applications that use CGo.
 
 ### Models
 
