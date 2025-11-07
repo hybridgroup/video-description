@@ -1,9 +1,9 @@
-github.com/ebitengine/purego v0.8.4 h1:CF7LEKg5FFOsASUj0+QwaXf8Ht6TlFxg09+S9wz0omw=
-github.com/ebitengine/purego v0.8.4/go.mod h1:iIjxzd6CiRiOG0UyXP+V1+jWqUXVjPKLAI0mRfJZTmQ=
+github.com/ebitengine/purego v0.9.1 h1:a/k2f2HQU3Pi399RPW1MOaZyhKJL9w/xFpKAg4q1s0A=
+github.com/ebitengine/purego v0.9.1/go.mod h1:iIjxzd6CiRiOG0UyXP+V1+jWqUXVjPKLAI0mRfJZTmQ=
 github.com/hybridgroup/mjpeg v0.0.0-20250330094202-16d243df0e35 h1:bTJxSThEisMQhK+VQUaHK72RqcUr6hXzYtRnuJByiQo=
 github.com/hybridgroup/mjpeg v0.0.0-20250330094202-16d243df0e35/go.mod h1:GAKUz9knlg+UB2oaCqgLTlWdsuVlf7ieJGt+oZzL4eY=
-github.com/hybridgroup/yzma v0.8.1 h1:owmaTEcX66RergmAWrwHUf9I6uj4PIjrXC3zJLqSSj4=
-github.com/hybridgroup/yzma v0.8.1/go.mod h1:hqcOnvdEmI0ci1UHo9AStKmTgqWIXTyEiU7ZnQz0HCU=
+github.com/hybridgroup/yzma v0.9.0 h1:r0MHUpqvElcpgboci/FaGuq1Z52W4tG6StLiZ+hNIOk=
+github.com/hybridgroup/yzma v0.9.0/go.mod h1:0j0lGvdDPSe+WnwmCQJWep37K6htvK+VN7lL9NHQ1V4=
 github.com/jupiterrider/ffi v0.5.1 h1:l7ANXU+Ex33LilVa283HNaf/sTzCrrht7D05k6T6nlc=
 github.com/jupiterrider/ffi v0.5.1/go.mod h1:x7xdNKo8h0AmLuXfswDUBxUsd2OqUP4ekC8sCnsmbvo=
 gocv.io/x/gocv v0.42.0 h1:AAsrFJH2aIsQHukkCovWqj0MCGZleQpVyf5gNVRXjQI=

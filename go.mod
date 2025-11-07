@@ -8,8 +8,8 @@ require (
 )
 
 require (
-	github.com/ebitengine/purego v0.8.4 // indirect
-	github.com/hybridgroup/yzma v0.8.1
+	github.com/ebitengine/purego v0.9.1 // indirect
+	github.com/hybridgroup/yzma v0.9.0
 	github.com/jupiterrider/ffi v0.5.1 // indirect
 	golang.org/x/sys v0.36.0 // indirect
 )
