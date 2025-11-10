@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>vlm-caption</title>
+    <title>Captions With Attitude</title>
 <style>
     body {
         display: flex;
@@ -46,12 +46,12 @@
         max-width: 75%;
     }
     #tone-form {
-        flex: 0 0 25%;
-        max-width: 320px;
-        min-width: 200px;
+        flex: 0 0 16%;
+        max-width: 200px;
+        min-width: 120px;
         background: #f3f3f3;
         border-radius: 12px;
-        padding: 24px 18px 18px 18px;
+        padding: 18px 10px 10px 10px;
         box-shadow: 0 2px 12px rgba(0,0,0,0.06);
         margin: 0;
         display: flex;
@@ -59,17 +59,33 @@
         align-items: flex-start;
         height: fit-content;
     }
+    #tone-form fieldset {
+        padding: 0;
+        margin: 0 0 8px 0;
+        border: none;
+        width: 100%;
+    }
+    #tone-form label {
+        font-size: 0.95em;
+        display: flex;
+        align-items: center;
+        margin-bottom: 2px;
+    }
+    #tone-form input[type="radio"] {
+        transform: scale(1.1);
+        margin-right: 6px;
+    }
 </style>
 </head>
 <body>
-    <h1 style="margin-top: 0; margin-bottom: 12px; font-size: 2em; line-height: 1.1;">Opinionated VLM Captioning</h1>
+    <h1 style="margin-top: 0; margin-bottom: 12px; font-size: 2em; line-height: 1.1;">Captions With Attitude</h1>
     <div class="image-container">
         <img src="http://localhost:8080/video" alt="MJPEG Stream">
     </div>
     <div class="caption-tone-row">
         <div id="caption">Loading caption...</div>
         <form id="tone-form">
-            <fieldset style="border: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+            <fieldset style="border: none; padding: 0; margin: 0 0 16px 0; display: flex; flex-direction: column; gap: 8px;">
                 <legend style="font-size: 1em; font-weight: bold; margin-bottom: 8px;">Tone</legend>
                 <label style="font-size: 0.97em; display: flex; align-items: center;">
                     <input type="radio" name="tone" value="flattering" style="transform: scale(1.15); margin-right: 8px;">
@@ -133,6 +149,14 @@
                 });
             }
         });
+
+        setInterval(() => {
+            const img = document.querySelector('.image-container img');
+            if (img) {
+                const baseUrl = "http://localhost:8080/video";
+                img.src = baseUrl + "?t=" + Date.now();
+            }
+        }, 30000);
     </script>
 </body>
 </html>

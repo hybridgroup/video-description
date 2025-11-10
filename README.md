@@ -1,8 +1,8 @@
-# vlm-caption
+# Captions With Attitude
 
-![vlm caption](./images/vlm-caption.png)
+![Captions With Attitude](./images/vlm-caption.png)
 
-`vlm-caption` is a Go application that uses a Vision Language Model (VLM) to show live captions from your webcam in your browser all running entirely on your local machine!
+"Captions With Attitude" is a Go application that uses a Vision Language Model (VLM) to show live captions from your webcam in your browser all running entirely on your local machine!
 
 It uses [yzma](https://github.com/hybridgroup/yzma) to perform local inference using [`llama.cpp`](https://github.com/ggml-org/llama.cpp) and [GoCV](https://github.com/hybridgroup/gocv) for the video processing.
 
@@ -39,7 +39,7 @@ go build .
 ## Running
 
 ```shell
-./vlm-caption 0 localhost:8080 ~/models/Qwen3-VL-2B-Instruct-Q8_0.gguf ~/models/mmproj-Qwen3-VL-2B-Instruct-Q8_0.gguf "Give a very brief description of what is going on."
+./captions-with-attitude 0 localhost:8080 ~/models/Qwen3-VL-2B-Instruct-Q8_0.gguf ~/models/mmproj-Qwen3-VL-2B-Instruct-Q8_0.gguf "Give a very brief description of what is going on."
 ```
 
 Now open your web browser pointed to http://localhost:8080/
