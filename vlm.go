@@ -45,7 +45,7 @@ func startVLM(modelFile, projectorFile, prompt string) {
 		caption = nextCaption(vlm, prompt)
 		fmt.Println("Caption:", caption)
 
-		time.Sleep(10 * time.Second)
+		time.Sleep(3 * time.Second)
 	}
 }
 
@@ -210,5 +210,6 @@ func (m *VLM) Results(output mtmd.InputChunks) (string, error) {
 
 // Clear clears the context memory.
 func (m *VLM) Clear() {
+	llama.Synchronize(m.ModelContext)
 	llama.MemoryClear(llama.GetMemory(m.ModelContext), true)
 }
