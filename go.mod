@@ -1,4 +1,4 @@
-module github.com/hybridgroup/vlm-caption
+module github.com/hybridgroup/captions-with-attitude
 
 go 1.25.0
 
