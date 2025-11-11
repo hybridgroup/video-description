@@ -25,7 +25,7 @@ captions-with-attitudes`)
 func handleFlags() error {
 	modelPath = flag.String("model", "", "model file to use")
 	projectorPath = flag.String("projector", "", "projector file to use")
-	promptText = flag.String("p", "", "prompt")
+	promptText = flag.String("p", "Give a very brief description of what is going on.", "prompt")
 	verbose = flag.Bool("v", false, "verbose logging")
 	deviceID = flag.String("device", "0", "camera device ID")
 	host = flag.String("host", "localhost:8080", "web server host:port")
