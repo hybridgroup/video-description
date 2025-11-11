@@ -16,6 +16,8 @@ var (
 	mutex  sync.Mutex
 )
 
+// startVideoCapture starts capturing video from the specified device ID
+// and streams it to the provided MJPEG stream.
 func startVideoCapture(deviceID string, stream *mjpeg.Stream) {
 	var err error
 	webcam, err = gocv.OpenVideoCapture(deviceID)
@@ -33,6 +35,7 @@ func startVideoCapture(deviceID string, stream *mjpeg.Stream) {
 	}
 }
 
+// captureFrame captures a single frame from the webcam and updates the MJPEG stream.
 func captureFrame(deviceID string, stream *mjpeg.Stream) {
 	mutex.Lock()
 	defer mutex.Unlock()
@@ -50,6 +53,7 @@ func captureFrame(deviceID string, stream *mjpeg.Stream) {
 	buf.Close()
 }
 
+// matToBitmap converts a gocv.Mat image to an mtmd.Bitmap.
 func matToBitmap(img gocv.Mat) (mtmd.Bitmap, error) {
 	mutex.Lock()
 	defer mutex.Unlock()

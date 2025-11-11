@@ -15,6 +15,7 @@ var (
 	host          *string
 )
 
+// showUsage displays the usage information for the program.
 func showUsage() {
 	fmt.Println(`
 Usage:
@@ -22,6 +23,7 @@ captions-with-attitudes`)
 	flag.PrintDefaults()
 }
 
+// handleFlags processes the command-line flags and validates them.
 func handleFlags() error {
 	modelPath = flag.String("model", "", "model file to use")
 	projectorPath = flag.String("projector", "", "projector file to use")

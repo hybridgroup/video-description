@@ -17,6 +17,9 @@ var (
 	humor   string
 )
 
+// startCaptions starts the caption generation loop.
+// It initializes the VLM and continuously generates captions
+// based on the current video frame.
 func startCaptions(modelFile, projectorFile, prompt string) {
 	if err := llama.Load(libPath); err != nil {
 		fmt.Println("unable to load library", err.Error())
@@ -49,6 +52,8 @@ func startCaptions(modelFile, projectorFile, prompt string) {
 	}
 }
 
+// nextCaption generates the next caption using the VLM
+// based on the current video frame and prompt.
 func nextCaption(vlm *VLM, prompt string) string {
 	newPrompt := prompt + promptStyle() + mtmd.DefaultMarker()
 	fmt.Println(newPrompt)
@@ -82,6 +87,8 @@ func nextCaption(vlm *VLM, prompt string) string {
 
 const keepShort = " Keep the response to 30 words or less."
 
+// promptStyle builds the style instructions for the prompt
+// based on the current tone and humor settings.
 func promptStyle() string {
 	switch {
 	case tone == "" && humor == "":

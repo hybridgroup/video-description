@@ -42,6 +42,7 @@ func (m *VLM) Close() {
 	}
 }
 
+// Init initializes the VLM.
 func (m *VLM) Init() error {
 	m.TextModel = llama.ModelLoadFromFile(m.TextModelFilename, llama.ModelDefaultParams())
 
@@ -64,6 +65,7 @@ func (m *VLM) Init() error {
 	return nil
 }
 
+// ChatTemplate applies the model's chat template to the given messages.
 func (m *VLM) ChatTemplate(messages []llama.ChatMessage, add bool) string {
 	buf := make([]byte, 1024)
 	len := llama.ChatApplyTemplate(m.template, messages, add, buf)
@@ -72,6 +74,7 @@ func (m *VLM) ChatTemplate(messages []llama.ChatMessage, add bool) string {
 	return result
 }
 
+// Tokenize tokenizes the input text and image bitmap into output chunks.
 func (m *VLM) Tokenize(input *mtmd.InputText, bitmap mtmd.Bitmap, output mtmd.InputChunks) (err error) {
 	if res := mtmd.Tokenize(m.ProjectorContext, output, input, []mtmd.Bitmap{bitmap}); res != 0 {
 		err = fmt.Errorf("unable to tokenize: %d", res)
@@ -79,6 +82,7 @@ func (m *VLM) Tokenize(input *mtmd.InputText, bitmap mtmd.Bitmap, output mtmd.In
 	return
 }
 
+// Results generates text results from the given input chunks.
 func (m *VLM) Results(output mtmd.InputChunks) (string, error) {
 	var n llama.Pos
 	nBatch := llama.NBatch(m.ModelContext)
