@@ -20,11 +20,14 @@ func startWebServer(host string, stream *mjpeg.Stream, promptText string) {
 		w.Header().Set("Content-Type", "text/html; charset=utf-8")
 		w.Write([]byte(index))
 	})
+
 	mux.Handle("/video", stream)
+
 	mux.HandleFunc("/caption", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 		w.Write([]byte(caption))
 	})
+
 	mux.HandleFunc("/tone", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodPost {
 			type ToneRequest struct {
@@ -43,6 +46,7 @@ func startWebServer(host string, stream *mjpeg.Stream, promptText string) {
 		}
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 	})
+
 	mux.HandleFunc("/humor", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodPost {
 			type HumorRequest struct {
@@ -61,6 +65,7 @@ func startWebServer(host string, stream *mjpeg.Stream, promptText string) {
 		}
 		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 	})
+
 	mux.HandleFunc("/prompt", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 		w.Write([]byte(promptText))

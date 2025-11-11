@@ -16,7 +16,7 @@ func main() {
 	stream := mjpeg.NewStream()
 
 	go startVideoCapture(*deviceID, stream)
-	go startVLM(*modelPath, *projectorPath, *promptText)
+	go startCaptions(*modelPath, *projectorPath, *promptText)
 
 	fmt.Println("Capturing. Point your browser to", host)
 
